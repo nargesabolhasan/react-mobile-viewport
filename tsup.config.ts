@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { defineConfig } from "tsup";
 
-function prependUseClient() {
+async function prependUseClient() {
   for (const file of ["index.js", "index.cjs"]) {
     const filePath = join("dist", file);
     const content = readFileSync(filePath, "utf8");
